@@ -27,6 +27,7 @@
         
     </application>
     
+    <!-- required to connect to the internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
