@@ -2,7 +2,10 @@
 <resources>
 
     <string name="app_name">Cannibalize</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="findFood">Find Food</string>
+    <string name="findDrinks">Find Drinks</string>
+    <string name="findGreen">Find Greens</string>
+    <string name="findRides">Find Rides</string>
 
 </resources>

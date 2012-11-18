@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" >
 
-	<RelativeLayout 
-		 xmlns:android="http://schemas.android.com/apk/res/android"
-		 android:orientation="vertical" 
-		 android:layout_width="fill_parent"
-		 android:layout_height="fill_parent" >
-	
-	 <com.google.android.maps.MapView
+	    <!--
+      <com.google.android.maps.MapView
 		  xmlns:android="http://schemas.android.com/apk/res/android"
 		  android:id="@+id/map_view"
 		  android:layout_width="fill_parent" 
@@ -14,5 +13,50 @@
 		  android:clickable="true" 
 		  android:enabled="true" 
 		  android:apiKey="0zcoeo_gQIPhFsUFutb7VF56gkN1gUvdpGpudGQ" />
+	    -->
 
-</RelativeLayout>
+	    <LinearLayout
+	        android:id="@+id/linearLayout1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/findGreen"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="77dp" >
+	    </LinearLayout>
+
+	    <Button
+	        android:id="@+id/findRides"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/linearLayout1"
+	        android:layout_toRightOf="@+id/linearLayout1"
+	        android:text="@string/findRides" />
+
+	    <Button
+	        android:id="@+id/findDrinks"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/findGreen"
+	        android:layout_alignLeft="@+id/findGreen"
+	        android:layout_alignRight="@+id/findGreen"
+	        android:text="@string/findDrinks" />
+
+	    <Button
+	        android:id="@+id/findFood"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/findDrinks"
+	        android:layout_alignBottom="@+id/findDrinks"
+	        android:layout_alignLeft="@+id/findRides"
+	        android:layout_alignRight="@+id/findRides"
+	        android:text="@string/findFood" />
+
+	    <Button
+	        android:id="@+id/findGreen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignRight="@+id/linearLayout1"
+	        android:layout_centerVertical="true"
+	        android:text="@string/findGreen" />
+
+	</RelativeLayout>
