@@ -35,7 +35,7 @@ public class MainActivity extends MapActivity {
         findDrinksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // search for close bars
+                displayPathToLocation("bars");
             }
         });
 
@@ -44,7 +44,7 @@ public class MainActivity extends MapActivity {
         findFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // search for close restaurants
+                displayPathToLocation("food");
             }
         });
 
@@ -53,7 +53,7 @@ public class MainActivity extends MapActivity {
         findGreensButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // search for close marijuana dispensaries
+                displayPathToLocation("dispensaries");
             }
         });
 
@@ -68,11 +68,9 @@ public class MainActivity extends MapActivity {
 
     }
 
-    // TODO: retrieve current GPS location
-
-    // TODO: query google maps for a 'target', e.g. taco bell, bars, etc.
-    // return and place location in coordinate form
-
-    // TODO: call google maps with GPS and 'target location'
-    // use current loc. coords. and 'target location' coords to display path
+    private void displayPathToLocation(String locationType) {
+        // take in a 'locations type' e.g. food, drink, or dispensaries and
+        // compare this the users GPS location, then display a path to this
+        // location
+    }
 }
