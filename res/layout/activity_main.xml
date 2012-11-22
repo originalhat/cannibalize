@@ -4,17 +4,6 @@
 	    android:layout_height="fill_parent"
 	    android:orientation="vertical" >
 
-	    <!--
-      <com.google.android.maps.MapView
-		  xmlns:android="http://schemas.android.com/apk/res/android"
-		  android:id="@+id/map_view"
-		  android:layout_width="fill_parent" 
-		  android:layout_height="fill_parent"
-		  android:clickable="true" 
-		  android:enabled="true" 
-		  android:apiKey="0zcoeo_gQIPhFsUFutb7VF56gkN1gUvdpGpudGQ" />
-	    -->
-
 	    <LinearLayout
 	        android:id="@+id/linearLayout1"
 	        android:layout_width="wrap_content"

@@ -1,5 +1,6 @@
 package denver.cannibalize;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,10 +14,6 @@ public class MainActivity extends MapActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // MapView mapView;
-        // mapView = (MapView) findViewById(R.id.map_view);
-        // mapView.setBuiltInZoomControls(true);
 
         listenForButtonClicks();
 
@@ -69,8 +66,10 @@ public class MainActivity extends MapActivity {
     }
 
     private void displayPathToLocation(String locationType) {
-        // take in a 'locations type' e.g. food, drink, or dispensaries and
-        // compare this the users GPS location, then display a path to this
-        // location
+
+        Intent intent = new Intent(this,
+                denver.cannibalize.MapViewActivity.class);
+
+        startActivity(intent);
     }
 }

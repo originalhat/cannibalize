@@ -7,5 +7,7 @@
     <string name="findDrinks">Find Drinks</string>
     <string name="findGreen">Find Greens</string>
     <string name="findRides">Find Rides</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_map_view">MapViewActivity</string>
 
 </resources>
