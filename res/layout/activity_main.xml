@@ -3,7 +3,7 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    android:orientation="vertical"
-	    android:background="@color/green" >
+	    android:background="@color/green" > 
 
 	    <LinearLayout
 	        android:id="@+id/linearLayout1"
@@ -18,7 +18,10 @@
 	        android:id="@+id/findRides"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/linearLayout1"
+	        android:layout_alignBottom="@+id/findGreen"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/findGreen"
+	        android:layout_marginRight="130dp"
 	        android:layout_toRightOf="@+id/linearLayout1"
 	        android:text="@string/findRides" />
 
@@ -35,18 +38,37 @@
 	        android:id="@+id/findFood"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/findDrinks"
 	        android:layout_alignBottom="@+id/findDrinks"
 	        android:layout_alignLeft="@+id/findRides"
-	        android:layout_alignRight="@+id/findRides"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/findDrinks"
+	        android:layout_marginRight="131dp"
 	        android:text="@string/findFood" />
 
 	    <Button
 	        android:id="@+id/findGreen"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentLeft="true"
 	        android:layout_alignRight="@+id/linearLayout1"
-	        android:layout_centerVertical="true"
+	        android:layout_marginBottom="374dp"
+	        android:layout_marginLeft="122dp"
 	        android:text="@string/findGreen" />
+
+	    <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="85dp"
+	        android:orientation="vertical" >
+
+	        <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="fill_parent"
+	            android:src="@drawable/homescreen_logo" />
+
+	    </LinearLayout>
 
 	</RelativeLayout>
