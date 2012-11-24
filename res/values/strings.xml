@@ -9,5 +9,7 @@
     <string name="findRides">Find Rides</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_map_view">MapViewActivity</string>
+    <color name="green">#339966</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>

@@ -10,10 +10,6 @@ import com.google.android.maps.MapActivity;
 
 public class MainActivity extends MapActivity {
 
-    final int BARS = 0;
-    final int FOOD = 1;
-    final int DISPENSARIES = 2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,7 +33,7 @@ public class MainActivity extends MapActivity {
         findDrinksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayPathToLocation(BARS);
+                displayPathToLocation("BARS");
             }
         });
 
@@ -46,7 +42,7 @@ public class MainActivity extends MapActivity {
         findFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayPathToLocation(FOOD);
+                displayPathToLocation("FOOD");
             }
         });
 
@@ -55,7 +51,7 @@ public class MainActivity extends MapActivity {
         findGreensButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayPathToLocation(DISPENSARIES);
+                displayPathToLocation("DISPENSARIES");
             }
         });
 
@@ -70,11 +66,19 @@ public class MainActivity extends MapActivity {
 
     }
 
-    private void displayPathToLocation(int locationType) {
+    private void displayPathToLocation(String destination) {
 
-        Intent intent = new Intent(
-                android.content.Intent.ACTION_VIEW,
-                Uri.parse("http://maps.google.com/maps?saddr=20.344,34.34&daddr=20.5666,45.345"));
+        // using GPS for location
+        // String uri = "http://maps.google.com/maps?saddr="
+        // + Utils.getLatitude(ShowDetails.this) + ","
+        // + Utils.getLongitude(ShowDetails.this) + "&daddr="
+
+        String origin = "Denver,CO";
+        String directionsURL = "http://maps.google.com/maps?saddr=" + origin
+                + "&daddr=" + destination;
+
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                Uri.parse(directionsURL));
 
         startActivity(intent);
 
