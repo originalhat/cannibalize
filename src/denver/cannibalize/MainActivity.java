@@ -68,12 +68,19 @@ public class MainActivity extends MapActivity {
 
     private void displayPathToLocation(String destination) {
 
-        // using GPS for location
-        // String uri = "http://maps.google.com/maps?saddr="
-        // + Utils.getLatitude(ShowDetails.this) + ","
-        // + Utils.getLongitude(ShowDetails.this) + "&daddr="
+        // LocationManager lm = (LocationManager)
+        // getSystemService(Context.LOCATION_SERVICE);
+        // Location location =
+        // lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        //
+        // double longitude = location.getLongitude();
+        // double latitude = location.getLatitude();
+        //
+        // String origin = longitude + "," + latitude;
 
+        // this is a workaround for emulated devices with no GPS
         String origin = "Denver,CO";
+
         String directionsURL = "http://maps.google.com/maps?saddr=" + origin
                 + "&daddr=" + destination;
 
