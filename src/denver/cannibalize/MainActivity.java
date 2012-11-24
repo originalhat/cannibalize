@@ -9,6 +9,10 @@ import com.google.android.maps.MapActivity;
 
 public class MainActivity extends MapActivity {
 
+    final int BARS = 0;
+    final int FOOD = 1;
+    final int DISPENSARIES = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,7 +36,7 @@ public class MainActivity extends MapActivity {
         findDrinksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayPathToLocation("bars");
+                displayPathToLocation(BARS);
             }
         });
 
@@ -41,7 +45,7 @@ public class MainActivity extends MapActivity {
         findFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayPathToLocation("food");
+                displayPathToLocation(FOOD);
             }
         });
 
@@ -50,7 +54,7 @@ public class MainActivity extends MapActivity {
         findGreensButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayPathToLocation("dispensaries");
+                displayPathToLocation(DISPENSARIES);
             }
         });
 
@@ -65,10 +69,14 @@ public class MainActivity extends MapActivity {
 
     }
 
-    private void displayPathToLocation(String locationType) {
+    private void displayPathToLocation(int locationType) {
 
         Intent intent = new Intent(this,
                 denver.cannibalize.MapViewActivity.class);
+
+        Bundle destinationBundle = new Bundle();
+        destinationBundle.putInt("locationType", locationType);
+        intent.putExtras(destinationBundle);
 
         startActivity(intent);
     }

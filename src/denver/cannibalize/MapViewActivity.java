@@ -1,5 +1,6 @@
 package denver.cannibalize;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 
@@ -8,6 +9,10 @@ import com.google.android.maps.MapView;
 
 public class MapViewActivity extends MapActivity {
 
+    final int BARS = 0;
+    final int FOOD = 1;
+    final int DISPENSARIES = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +20,13 @@ public class MapViewActivity extends MapActivity {
 
         MapView mapView = (MapView) findViewById(R.id.map_view);
         mapView.setBuiltInZoomControls(true);
+
+        Intent intent = getIntent();
+        Bundle destinationBundle = intent.getExtras();
+        if (destinationBundle != null) {
+
+            int locationType = destinationBundle.getInt("locationType");
+        }
 
     }
 
