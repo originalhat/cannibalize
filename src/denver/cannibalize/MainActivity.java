@@ -68,24 +68,25 @@ public class MainActivity extends MapActivity {
 
     private void displayPathToLocation(String destination) {
 
-        // LocationManager lm = (LocationManager)
-        // getSystemService(Context.LOCATION_SERVICE);
-        // Location location =
-        // lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        //
-        // double longitude = location.getLongitude();
-        // double latitude = location.getLatitude();
-        //
-        // String origin = longitude + "," + latitude;
+        /*
+         * NOTE: this code is for use with a GPS enabled device
+         * 
+         * LocationManager lm = (LocationManager)
+         * getSystemService(Context.LOCATION_SERVICE); Location location =
+         * lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+         * 
+         * double longitude = location.getLongitude(); double latitude =
+         * location.getLatitude();
+         * 
+         * String origin = longitude + "," + latitude;
+         */
 
         // this is a workaround for emulated devices with no GPS
-        String origin = "Denver,CO";
+        String origin = "39.747289,-105.002539";
 
-        String directionsURL = "http://maps.google.com/maps?saddr=" + origin
-                + "&daddr=" + destination;
+        String directionsURL = "http://maps.google.com/maps?saddr=" + origin + "&daddr=" + destination;
 
-        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                Uri.parse(directionsURL));
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(directionsURL));
 
         startActivity(intent);
 
