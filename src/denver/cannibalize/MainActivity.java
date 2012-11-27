@@ -70,18 +70,18 @@ public class MainActivity extends MapActivity {
 
     private void displayPathToLocation(String destination) {
 
-        /*
-         * NOTE: this code is for use with a GPS enabled device
-         * 
-         * LocationManager lm = (LocationManager)
-         * getSystemService(Context.LOCATION_SERVICE); Location location =
-         * lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-         * 
-         * double longitude = location.getLongitude(); double latitude =
-         * location.getLatitude();
-         * 
-         * String origin = longitude + "," + latitude;
-         */
+        // NOTE: this code is for use with a GPS enabled device
+        // LocationManager locationManager = (LocationManager)
+        // getSystemService(Context.LOCATION_SERVICE);
+        // Criteria criteria = new Criteria();
+        // String bestProvider = locationManager.getBestProvider(criteria,
+        // false);
+        // Location location =
+        // locationManager.getLastKnownLocation(bestProvider);
+        // double longitude = location.getLongitude();
+        // double latitude = location.getLatitude();
+        //
+        // String origin = longitude + "," + latitude;
 
         // this is a workaround for emulated devices with no GPS
         String origin = "39.747289,-105.002539";
