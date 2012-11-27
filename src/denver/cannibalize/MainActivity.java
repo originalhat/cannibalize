@@ -16,6 +16,8 @@ public class MainActivity extends MapActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // EditText mEdit = (EditText) findViewById(R.id.SMSText);
+
         listenForButtonClicks();
 
     }
