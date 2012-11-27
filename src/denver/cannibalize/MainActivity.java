@@ -1,6 +1,12 @@
 package denver.cannibalize;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +21,8 @@ public class MainActivity extends MapActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // EditText mEdit = (EditText) findViewById(R.id.SMSText);
 
         listenForButtonClicks();
 
@@ -60,7 +68,24 @@ public class MainActivity extends MapActivity {
         findRidesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // use an Intent to open contacts
+
+                ArrayList<String> messages = new ArrayList<String>();
+
+                String origin = getOrigin();
+
+                messages.add("Yo broski, I need a ride! - " + origin);
+                messages.add("I need to get some cheetos man! - " + origin);
+                messages.add("Whoah, I'm so faded, lets party! - " + origin);
+                messages.add("CAN I GET A RIDE?!? - " + origin);
+
+                Collections.shuffle(messages);
+
+                Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+                smsIntent.setType("vnd.android-dir/mms-sms");
+                smsIntent.putExtra("address", "7204966335");
+                smsIntent.putExtra("sms_body", messages.get(0));
+                startActivity(smsIntent);
+
             }
         });
 
@@ -68,21 +93,7 @@ public class MainActivity extends MapActivity {
 
     private void displayPathToLocation(String destination) {
 
-        /*
-         * NOTE: this code is for use with a GPS enabled device
-         * 
-         * LocationManager lm = (LocationManager)
-         * getSystemService(Context.LOCATION_SERVICE); Location location =
-         * lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-         * 
-         * double longitude = location.getLongitude(); double latitude =
-         * location.getLatitude();
-         * 
-         * String origin = longitude + "," + latitude;
-         */
-
-        // this is a workaround for emulated devices with no GPS
-        String origin = "39.747289,-105.002539";
+        String origin = getOrigin();
 
         String directionsURL = "http://maps.google.com/maps?saddr=" + origin + "&daddr=" + destination;
 
@@ -90,5 +101,15 @@ public class MainActivity extends MapActivity {
 
         startActivity(intent);
 
+    }
+
+    private String getOrigin() {
+        LocationManager mlocManager = null;
+        LocationListener mlocListener;
+        mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        mlocListener = new MyLocationListener();
+        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
+
+        return MyLocationListener.longitude + "," + MyLocationListener.latitude;
     }
 }
