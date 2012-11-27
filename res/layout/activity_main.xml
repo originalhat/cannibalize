@@ -71,4 +71,16 @@
 
 	    </LinearLayout>
 
+	    <EditText
+	        android:id="@+id/editText1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="200dp"
+	        android:layout_alignLeft="@+id/findGreen"
+	        android:layout_alignRight="@+id/findRides"
+	        android:layout_below="@+id/findRides"
+	        android:layout_marginTop="44dp"
+	        android:background="@color/white"
+	        android:ems="10"
+	        android:inputType="textMultiLine" />
+
 	</RelativeLayout>
