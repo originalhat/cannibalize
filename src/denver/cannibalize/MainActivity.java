@@ -77,12 +77,13 @@ public class MainActivity extends MapActivity {
                 messages.add("I need to get some cheetos man! - " + origin);
                 messages.add("Whoah, I'm so faded, lets party! - " + origin);
                 messages.add("CAN I GET A RIDE?!? - " + origin);
+                messages.add("heeeeyyyyyyyyy - " + origin);
 
                 Collections.shuffle(messages);
 
                 Intent smsIntent = new Intent(Intent.ACTION_VIEW);
                 smsIntent.setType("vnd.android-dir/mms-sms");
-                smsIntent.putExtra("address", "7204966335");
+                smsIntent.putExtra("address", "5551930");
                 smsIntent.putExtra("sms_body", messages.get(0));
                 startActivity(smsIntent);
 
