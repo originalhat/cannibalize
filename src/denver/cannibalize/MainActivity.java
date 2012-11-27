@@ -1,6 +1,9 @@
 package denver.cannibalize;
 
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -70,21 +73,16 @@ public class MainActivity extends MapActivity {
 
     private void displayPathToLocation(String destination) {
 
-        // NOTE: this code is for use with a GPS enabled device
-        // LocationManager locationManager = (LocationManager)
-        // getSystemService(Context.LOCATION_SERVICE);
-        // Criteria criteria = new Criteria();
-        // String bestProvider = locationManager.getBestProvider(criteria,
-        // false);
-        // Location location =
-        // locationManager.getLastKnownLocation(bestProvider);
-        // double longitude = location.getLongitude();
-        // double latitude = location.getLatitude();
-        //
-        // String origin = longitude + "," + latitude;
+        LocationManager mlocManager = null;
+        LocationListener mlocListener;
+        mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        mlocListener = new MyLocationListener();
+        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
+
+        String origin = MyLocationListener.longitude + "," + MyLocationListener.latitude;
 
         // this is a workaround for emulated devices with no GPS
-        String origin = "39.747289,-105.002539";
+        // String origin = "39.747289,-105.002539";
 
         String directionsURL = "http://maps.google.com/maps?saddr=" + origin + "&daddr=" + destination;
 
